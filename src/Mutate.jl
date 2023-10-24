@@ -260,7 +260,11 @@ function next_generation(
     probChange = 1.0
     if options.annealing
         delta = afterScore - beforeScore
-        probChange *= exp(-delta / (temperature * options.alpha))
+        if options.norm_evol
+            probChange *= exp(-delta / (temperature * options.alpha * beforeScore))
+        else
+            probChange *= exp(-delta / (temperature * options.alpha))
+        end
     end
     newSize = -1
     if options.use_frequency

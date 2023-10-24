@@ -22,6 +22,7 @@ default_params = (
     output_file=nothing,
     perturbation_factor=1.000000f0,
     annealing=true,
+    norm_evol=false,
     batching=false,
     batch_size=50,
     mutation_weights=MutationWeights(;

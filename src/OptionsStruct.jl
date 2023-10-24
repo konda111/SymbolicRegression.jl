@@ -151,6 +151,7 @@ struct Options{CT,OP<:AbstractOperatorEnum,use_recorder,OPT<:Optim.Options,W}
     populations::Int
     perturbation_factor::Float32
     annealing::Bool
+    norm_evol::Bool
     batching::Bool
     batch_size::Int
     mutation_weights::MutationWeights

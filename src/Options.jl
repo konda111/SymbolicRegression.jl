@@ -309,6 +309,7 @@ const OPTION_DESCRIPTIONS = """- `binary_operators`: Vector of binary operators 
     See its documentation on `MutationWeights` for the different weights.
 - `crossover_probability`: Probability of performing crossover.
 - `annealing`: Whether to use simulated annealing.
+- `norm_evol`: Whether to use alterantive normed evolution probability.
 - `warmup_maxsize_by`: Whether to slowly increase the max size from 5 up to
     `maxsize`. If nonzero, specifies the fraction through the search
     at which the maxsize should be reached.
@@ -384,6 +385,7 @@ function Options end
     populations::Integer=15,
     perturbation_factor::Real=0.076,
     annealing::Bool=false,
+    norm_evol::Bool=false,
     batching::Bool=false,
     batch_size::Integer=50,
     mutation_weights::Union{MutationWeights,AbstractVector,NamedTuple}=MutationWeights(),
@@ -758,6 +760,7 @@ function Options end
         populations,
         perturbation_factor,
         annealing,
+        norm_evol,
         batching,
         batch_size,
         set_mutation_weights,
